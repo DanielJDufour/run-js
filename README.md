@@ -16,9 +16,11 @@ pip install run-js
 ```
 
 # usage
-```bash
+```python
+# import the package name from js
 from js import lodash
 
+# access the function as an attribute
 result = lodash.uniq([1, 2, 2, 3, 3, 3])
 // result is [1, 2, 3]
 ```
@@ -26,8 +28,9 @@ result = lodash.uniq([1, 2, 2, 3, 3, 3])
 # Frequently Asked Questions
 ### what if my JavaScript package has a dash in the name?
 Python doesn't allow - in import statements, so we can access the library as a dictionary lookup.
-```bash
+```python
 import js
+
 fastMin = js['fast-min']
 
 result = fastMin([1, 2, 2, 3, 3, 3])
