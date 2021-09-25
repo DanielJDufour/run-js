@@ -49,7 +49,7 @@ class NodeFunction:
 
         dumped = json.dumps(data)
 
-        file_path = os.path.join(DIR_PATH, "run.js")
+        file_path = os.path.join(DIR_PATH, "scripts/run.js")
 
         process = subprocess.Popen(
             ["node", file_path],
@@ -94,7 +94,7 @@ class NodeModule:
     def __init__(self, module_name):
         self.module_name = module_name
 
-        file_path = os.path.join(DIR_PATH, "exists.js")
+        file_path = os.path.join(DIR_PATH, "scripts/exists.js")
 
         # check if need to install module
         process = subprocess.Popen(
