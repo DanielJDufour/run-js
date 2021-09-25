@@ -40,11 +40,14 @@ result = fastMin([1, 2, 2, 3, 3, 3])
 If you try to run a JavaScript package and it isn't installed, run-js will automatically
 provide you a prompt to install it.  You don't have to learn NPM's [package.json format](https://docs.npmjs.com/files/package.json/).
 
+### do I need to install NodeJS?
+Yes, you currently must install NodeJS on your system before using run-js.  The NPM CLI is also required, but usually comes with the NodeJS installation.  If you are using MacOS, you can install it with `brew install node`.  We will try to add friendly prompts to install NodeJS in the future.  (It's a little complicated because of all the different platforms to support.)
+
 # limitations
 ## only json-serializable input
 run-js currently only supports running functions that accept JSON-serializable input. 
 In other words, you can only call a function that accepts numbers, string, arrays, and simple objects.
-You can't pass functions or sets as a parameter. (We may try to fix this in the future, but only if it can be done securely).
+You can't pass functions or sets as a parameter. (We may try to fix this in the future, but only if it can be done securely.)
 
 ## stateless
 For security reasons, run-js doesn't keep a JavaScript process running in the background.  Therefore,
