@@ -112,9 +112,12 @@ class NodeModule:
         if process.returncode == 1:
             # module_name might include a subpath, so remove that
             if "/" in module_name:
-                module_name = module_name.split("/")[0]
+                if module_name.startswith("@"):
+                    module_name = "/".join(module_name.split("/")[0:2])
+                else:
+                    module_name = module_name.split("/")[0]
 
-            print("it doesn't appear that " + module_name + " is installed")
+            print("It doesn't appear that " + module_name + " is installed.")
             print("We will now install it via https://www.npmjs.com/")
             res = input("Press Y (yes) to continue or N (no) to cancel.\n")
             if res.upper() not in ["Y", "YES"]:

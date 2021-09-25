@@ -22,6 +22,8 @@ if (require.main === module) {
       if (function_name === "default") {
         if (typeof module === "function") {
           func = module;
+        } else {
+          func = module["default"];
         }
       } else {
         func = module[function_name];

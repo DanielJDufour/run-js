@@ -56,6 +56,20 @@ class TestCases(unittest.TestCase):
         result = js["parse-any-int"]("1,2345.0")
         self.assertEqual(result, 12345)
 
+    def test_org_package(self):
+        result = js["@turf/area"](
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        [[125, -15], [113, -22], [154, -27], [144, -15], [125, -15]]
+                    ],
+                },
+            }
+        )
+        self.assertEqual(result, 3339946239196.927)
+
 
 if __name__ == "__main__":
     unittest.main()
