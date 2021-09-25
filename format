@@ -1,0 +1,2 @@
+pipx run shed *.py
+npx prettier --arrow-parens=avoid --trailing-comma=none --write *.js
