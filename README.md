@@ -53,5 +53,8 @@ You can't pass functions or sets as a parameter. (We may try to fix this in the 
 For security reasons, run-js doesn't keep a JavaScript process running in the background.  Therefore,
 you can't chain JavaScript function calls.
 
+# thanks
+This project was partially inspired by the awesome Python package called [sh](https://github.com/amoffat/sh).
+
 # support
 Email the library author at daniel.j.dufour@gmail.com or post an issue at https://github.com/DanielJDufour/run-js/issues
