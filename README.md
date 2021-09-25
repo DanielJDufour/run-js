@@ -43,7 +43,7 @@ run-js currently only supports running functions that accept JSON-serialized inp
 In other words, you can only call a function that accepts numbers, string, arrays, and object.
 You can't pass a function as a parameter.
 ## stateless
-For security reasons, run-js doesn't keep a JavaScript process running the background.  Therefore,
+For security reasons, run-js doesn't keep a JavaScript process running in the background.  Therefore,
 you can't chain JavaScript function calls.
 
 # support
