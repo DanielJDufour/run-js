@@ -11,7 +11,7 @@ setup(
     name="run-js",
     packages=["js"],
     data_files=[("js", ["js/exists.js", "js/run.js"])],
-    version="0.0.0",
+    version="0.0.1",
     description="Goal: The Easiest Way to Run JavaScript in Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
