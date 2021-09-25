@@ -41,10 +41,11 @@ If you try to run a JavaScript package and it isn't installed, run-js will autom
 provide you a prompt to install it.  You don't have to learn NPM's [package.json format](https://docs.npmjs.com/files/package.json/).
 
 # limitations
-## json-serializable input
-run-js currently only supports running functions that accept JSON-serialized input. 
-In other words, you can only call a function that accepts numbers, string, arrays, and object.
-You can't pass a function as a parameter.
+## only json-serializable input
+run-js currently only supports running functions that accept JSON-serializable input. 
+In other words, you can only call a function that accepts numbers, string, arrays, and simple objects.
+You can't pass functions or sets as a parameter. (We may try to fix this in the future, but only if it can be done securely).
+
 ## stateless
 For security reasons, run-js doesn't keep a JavaScript process running in the background.  Therefore,
 you can't chain JavaScript function calls.
