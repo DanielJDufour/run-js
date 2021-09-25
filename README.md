@@ -41,7 +41,7 @@ result = fastMin([1, 2, 2, 3, 3, 3])
 ## json-serializable input
 run-js currently only supports running functions that accept JSON-serialized input. 
 In other words, you can only call a function that accepts numbers, string, arrays, and object.
-You can't pass a Python Function as a parameter.
+You can't pass a function as a parameter.
 ## stateless
 For security reasons, run-js doesn't keep a JavaScript process running the background.  Therefore,
 you can't chain JavaScript function calls.
