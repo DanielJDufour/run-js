@@ -53,6 +53,27 @@ You can't pass functions or sets as a parameter. (We may try to fix this in the 
 For security reasons, run-js doesn't keep a JavaScript process running in the background.  Therefore,
 you can't chain JavaScript function calls.
 
+# more examples
+```python
+import js
+
+# calculate statistics
+js['calc-stats']([291, 1723, 74, 741, 93, 84, 19])
+{ "min": 1, "max": 100, "mean": 66.25, "median": 70, "mode": 95, "modes": [90, 100], "sum": 328350, "histogram": { ... } }
+
+# run-length decoding
+js['fast-rle/decode']([5, 3, 1, 8, 2, 0])
+[3, 3, 3, 3, 3, 8, 0, 0]
+
+# reprojecting geospatial bounding boxes
+js["reproject-bbox"]({"bbox": [-122.51, 40.97, -122.34, 41.11], "from": 4326, "to": 3857})
+[-13637750.817083945, 5007917.677222896, -13618826.503649088, 5028580.202823918 ]
+
+# clipping hyperrectangle (multi-dimensional rectangle) from imagery data
+js['xdim'].clip({ "data": [0, 123, 123, 255, ...], "layout": "[row,column,band]", "sizes": {"band": 4, "row": 768, "column": 1024 }, "rect": { "band": [2,2], "row": [20, 219], "column": [47, 211]}})
+[213, 542, 521, 481, ...]
+```
+
 # thanks
 This project was partially inspired by the awesome Python package called [sh](https://github.com/amoffat/sh).
 
