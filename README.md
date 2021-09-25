@@ -36,6 +36,9 @@ fastMin = js['fast-min']
 result = fastMin([1, 2, 2, 3, 3, 3])
 // result is 1
 ```
+### do I need to understand JavaScript packaging?
+If you try to run a JavaScript package and it isn't installed, run-js will automatically
+provide you a prompt to install it.  You don't have to learn NPM's package.json format (but it would still be cool if you did).
 
 # limitations
 ## json-serializable input
