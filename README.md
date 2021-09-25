@@ -17,17 +17,17 @@ pip install run-js
 
 # usage
 ```python
-# import the package name from js
+# import the package from JavaScript into Python
 from js import lodash
 
-# access the function as an attribute
+# access a function as an attribute
 result = lodash.uniq([1, 2, 2, 3, 3, 3])
-// result is [1, 2, 3]
+# result is [1, 2, 3]
 ```
 
 # Frequently Asked Questions
 ### what if my JavaScript package has a dash in the name?
-Python doesn't allow - in import statements, so we can access the library as a dictionary lookup.
+Python doesn't allow `-` in import statements, so `js` is also a dictionary.
 ```python
 import js
 
@@ -38,7 +38,7 @@ result = fastMin([1, 2, 2, 3, 3, 3])
 ```
 ### do I need to understand JavaScript packaging?
 If you try to run a JavaScript package and it isn't installed, run-js will automatically
-provide you a prompt to install it.  You don't have to learn NPM's package.json format (but it would still be cool if you did).
+provide you a prompt to install it.  You don't have to learn NPM's [package.json format](https://docs.npmjs.com/files/package.json/).
 
 # limitations
 ## json-serializable input
