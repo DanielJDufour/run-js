@@ -12,7 +12,7 @@ setup(
     packages=["js"],
     package_dir={"js": "js"},
     package_data={"js": ["js/__init__.py", "js/exists.js", "js/run.js"]},
-    version="0.0.1",
+    version="0.0.2",
     description="Goal: The Easiest Way to Run JavaScript in Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
