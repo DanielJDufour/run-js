@@ -16,9 +16,11 @@ pip install run-js
 ```
 
 # usage
-```bash
+```python
+# import the package name from js
 from js import lodash
 
+# access the function as an attribute
 result = lodash.uniq([1, 2, 2, 3, 3, 3])
 // result is [1, 2, 3]
 ```
@@ -26,21 +28,25 @@ result = lodash.uniq([1, 2, 2, 3, 3, 3])
 # Frequently Asked Questions
 ### what if my JavaScript package has a dash in the name?
 Python doesn't allow - in import statements, so we can access the library as a dictionary lookup.
-```bash
+```python
 import js
+
 fastMin = js['fast-min']
 
 result = fastMin([1, 2, 2, 3, 3, 3])
 // result is 1
 ```
+### do I need to understand JavaScript packaging?
+If you try to run a JavaScript package and it isn't installed, run-js will automatically
+provide you a prompt to install it.  You don't have to learn NPM's package.json format (but it would still be cool if you did).
 
 # limitations
 ## json-serializable input
-run-js currently only supports running functions that accept JSON-serialized input.  
+run-js currently only supports running functions that accept JSON-serialized input. 
 In other words, you can only call a function that accepts numbers, string, arrays, and object.
-You can't pass a Python Function as a parameter.
+You can't pass a function as a parameter.
 ## stateless
-For security reasons, run-js doesn't keep a JavaScript process running the background.  Therefore,
+For security reasons, run-js doesn't keep a JavaScript process running in the background.  Therefore,
 you can't chain JavaScript function calls.
 
 # support
