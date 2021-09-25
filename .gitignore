@@ -130,3 +130,5 @@ dmypy.json
 
 # backup files
 *bak*
+
+node_modules

@@ -17,6 +17,8 @@ DEBUG_RUN_JS = os.getenv("DEBUG_RUN_JS", False) in [
 
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
+CWD = os.getcwd()
+
 
 class NodeFunction:
     def __init__(self, function_name, module_name):
@@ -57,6 +59,7 @@ class NodeFunction:
             stdout=subprocess.PIPE,
             text=True,
             encoding="utf-8",
+            cwd=CWD,
         )
         output, err = process.communicate(dumped, timeout=60)
 
@@ -102,6 +105,7 @@ class NodeModule:
             stdout=subprocess.PIPE,
             text=True,
             encoding="utf-8",
+            cwd=CWD,
         )
         process.communicate(module_name, timeout=60)
 
@@ -111,7 +115,7 @@ class NodeModule:
                 module_name = module_name.split("/")[0]
 
             print("it doesn't appear that " + module_name + " is installed")
-            print("We will now try to install it via https://www.npmjs.com/")
+            print("We will now install it via https://www.npmjs.com/")
             res = input("Press Y (yes) to continue or N (no) to cancel.\n")
             if res.upper() not in ["Y", "YES"]:
                 raise Exception(
@@ -122,8 +126,14 @@ class NodeModule:
             if not re.match(r"^@?[A-Za-z_\-\.\/]+$", module_name):
                 raise Exception("invalid module name")
 
+            # create package.json if none exists
+            package_json_file_path = os.path.join(CWD, "package.json")
+            if not os.path.isfile(package_json_file_path):
+                with open(package_json_file_path, mode="w", encoding="utf-8") as f:
+                    f.write(json.dumps({"name": "run-js", "private": True}))
+
             print("installing " + module_name)
-            subprocess.call(["npm", "install", module_name], shell=False)
+            subprocess.call(["npm", "install", module_name], shell=False, cwd=CWD)
 
     def __getattr__(self, function_name):
         if DEBUG_RUN_JS:
@@ -151,6 +161,7 @@ class NodeModule:
         return NodeFunction(module_name=self.module_name, function_name="default")(
             *args
         )
+
 
 class ModuleWrapper(ModuleType):
     __path__ = []
