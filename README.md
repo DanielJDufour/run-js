@@ -17,17 +17,17 @@ pip install run-js
 
 # usage
 ```python
-# import the package name from js
+# import the package from JavaScript into Python
 from js import lodash
 
-# access the function as an attribute
+# access a function as an attribute
 result = lodash.uniq([1, 2, 2, 3, 3, 3])
-// result is [1, 2, 3]
+# result is [1, 2, 3]
 ```
 
 # Frequently Asked Questions
 ### what if my JavaScript package has a dash in the name?
-Python doesn't allow - in import statements, so we can access the library as a dictionary lookup.
+Python doesn't allow `-` in import statements, so `js` is also a dictionary.
 ```python
 import js
 
@@ -38,16 +38,23 @@ result = fastMin([1, 2, 2, 3, 3, 3])
 ```
 ### do I need to understand JavaScript packaging?
 If you try to run a JavaScript package and it isn't installed, run-js will automatically
-provide you a prompt to install it.  You don't have to learn NPM's package.json format (but it would still be cool if you did).
+provide you a prompt to install it.  You don't have to learn NPM's [package.json format](https://docs.npmjs.com/files/package.json/).
+
+### do I need to install NodeJS?
+Yes, you currently must install NodeJS on your system before using run-js.  The NPM CLI is also required, but usually comes with the NodeJS installation.  If you are using MacOS, you can install it with `brew install node`.  We will try to add friendly prompts to install NodeJS in the future.  (It's a little complicated because of all the different platforms to support.)
 
 # limitations
-## json-serializable input
-run-js currently only supports running functions that accept JSON-serialized input. 
-In other words, you can only call a function that accepts numbers, string, arrays, and object.
-You can't pass a function as a parameter.
+## only json-serializable input
+run-js currently only supports running functions that accept JSON-serializable input. 
+In other words, you can only call a function that accepts numbers, string, arrays, and simple objects.
+You can't pass functions or sets as a parameter. (We may try to fix this in the future, but only if it can be done securely.)
+
 ## stateless
 For security reasons, run-js doesn't keep a JavaScript process running in the background.  Therefore,
 you can't chain JavaScript function calls.
+
+# thanks
+This project was partially inspired by the awesome Python package called [sh](https://github.com/amoffat/sh).
 
 # support
 Email the library author at daniel.j.dufour@gmail.com or post an issue at https://github.com/DanielJDufour/run-js/issues
