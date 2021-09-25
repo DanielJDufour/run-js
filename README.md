@@ -74,6 +74,9 @@ js['xdim'].clip({ "data": [0, 123, 123, 255, ...], "layout": "[row,column,band]"
 [213, 542, 521, 481, ...]
 ```
 
+# necessary disclaimer
+Use at your own risk.
+
 # thanks
 This project was partially inspired by the awesome Python package called [sh](https://github.com/amoffat/sh).
 
