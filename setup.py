@@ -9,9 +9,8 @@ with open(path.join(this_directory, "README.md")) as f:
 
 setup(
     name="run-js",
-    py_modules=["js"],
-    include_package_data=True,
-    data_files=[("", ["exists.js", "run.js"])],
+    packages=["js"],
+    data_files=[("js", ["js/exists.js", "js/run.js"])],
     version="0.0.0",
     description="Goal: The Easiest Way to Run JavaScript in Python",
     long_description=long_description,
