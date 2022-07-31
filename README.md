@@ -57,6 +57,10 @@ you can't chain JavaScript function calls.
 ```python
 import js
 
+# precise mathematics
+js.preciso.divide("1", "234", { "ellipsis": True })
+'0.0042735042735042735...'
+
 # calculate statistics
 js['calc-stats']([291, 1723, 74, 741, 93, 84, 19])
 { "min": 1, "max": 100, "mean": 66.25, "median": 70, "mode": 95, "modes": [90, 100], "sum": 328350, "histogram": { ... } }
