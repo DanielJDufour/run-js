@@ -25,6 +25,9 @@ result = lodash.uniq([1, 2, 2, 3, 3, 3])
 # result is [1, 2, 3]
 ```
 
+# video introduction
+[<img width="300" alt="Screen Shot 2022-08-05 at 7 22 42 PM" src="https://user-images.githubusercontent.com/4313463/183222966-ec7854ce-8b1e-4bdc-9538-4e192743a006.png">](https://www.youtube.com/watch?v=m9gOaMBLkpk)
+
 # Frequently Asked Questions
 ### what if my JavaScript package has a dash in the name?
 Python doesn't allow `-` in import statements, so `js` is also a dictionary.
